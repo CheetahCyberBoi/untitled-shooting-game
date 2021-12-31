@@ -20,24 +20,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Powerup, function (sprite, other
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     music.pewPew.playUntilDone()
-    projectile = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . 5 5 . . . . . . . 
-        . . . . . . . 5 5 . . . . . . . 
-        . . . . . . . 4 4 . . . . . . . 
-        . . . . . . . 4 4 . . . . . . . 
-        . . . . . . . 2 2 . . . . . . . 
-        . . . . . . . 2 2 . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, mySprite, 0, -100)
+    projectile = sprites.createProjectileFromSprite(assets.image`bullet`, mySprite, 0, -100)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
     asteriod.destroy()
@@ -53,7 +36,9 @@ controller.combos.attachCombo("upupdowndownleftrightleftrightab ", function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.setScore(info.score() + time * 10)
+    effects.starField.startScreenEffect(2000)
     game.over(false)
+    effects.starField.endScreenEffect()
 })
 let time = 0
 let asteriod: Sprite = null
