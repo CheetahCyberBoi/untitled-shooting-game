@@ -1,0 +1,17 @@
+{
+    "image1": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQDQAAAAAAAN0AAADd3d3dDQAA0G3W3d1AAiDdlmnd3UUCIN2Wad3dRQIA0G3W3d1AAgAA3d3d3Q0AAAAAAAAA3QAAAAAAAADQDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "rocket"
+    },
+    "image2": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALC7u7sAAAAAu7u7uwsAALC93b27uwAAsLvdvdu7AACwu929u7sAALC7u7vbuwAAsNu7u7u7AACwu7vbu7sAALC7u7vbuwAAALu7u7sLAAAAsLu7uwAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "asteriod"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
