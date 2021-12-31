@@ -161,13 +161,13 @@ scene.setBackgroundImage(img`
     `)
 forever(function () {
     for (let index = 0; index < 20; index++) {
-        pause(2000)
+        pause(1000)
         asteriod = sprites.create(assets.image`asteriod`, SpriteKind.Enemy)
         asteriod.setPosition(randint(10, 160), 0)
         asteriod.setVelocity(0, randint(25, 100))
     }
     for (let index = 0; index < 20; index++) {
-        pause(1000)
+        pause(500)
         for (let index = 0; index < 2; index++) {
             asteriod = sprites.create(assets.image`asteriod`, SpriteKind.Enemy)
             asteriod.setPosition(randint(10, 160), 0)
