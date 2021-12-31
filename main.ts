@@ -164,14 +164,14 @@ forever(function () {
         pause(2000)
         asteriod = sprites.create(assets.image`asteriod`, SpriteKind.Enemy)
         asteriod.setPosition(randint(10, 160), 0)
-        asteriod.setVelocity(0, 50)
+        asteriod.setVelocity(0, randint(25, 100))
     }
     for (let index = 0; index < 20; index++) {
         pause(1000)
         for (let index = 0; index < 2; index++) {
             asteriod = sprites.create(assets.image`asteriod`, SpriteKind.Enemy)
             asteriod.setPosition(randint(10, 160), 0)
-            asteriod.setVelocity(0, 100)
+            asteriod.setVelocity(0, randint(50, 200))
         }
     }
 })
