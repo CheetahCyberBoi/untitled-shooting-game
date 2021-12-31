@@ -1,3 +1,23 @@
+namespace SpriteKind {
+    export const Powerup = SpriteKind.create()
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Powerup, function (sprite, otherSprite) {
+    if (mySprite.overlapsWith(speedpowerup)) {
+        speedpowerup.destroy()
+        music.powerUp.playUntilDone()
+        speedX = speedX * 1.5
+        speedY = speedY * 1.5
+        while (powerupCountdown != 10) {
+            pause(1000)
+            powerupCountdown += 1
+            controller.moveSprite(mySprite, speedX, speedY)
+        }
+        speedX = 100
+        speedY = 100
+        powerupCountdown = 0
+        music.powerDown.playUntilDone()
+    }
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     music.pewPew.playUntilDone()
     projectile = sprites.createProjectileFromSprite(img`
@@ -25,7 +45,11 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
     music.zapped.playUntilDone()
 })
 controller.combos.attachCombo("upupdowndownleftrightleftrightab ", function () {
-    game.splash("haha funni secret")
+    for (let index = 0; index < 10; index++) {
+        speedpowerup = sprites.create(assets.image`speedpowerup`, SpriteKind.Powerup)
+        speedpowerup.setPosition(randint(10, 160), 0)
+        speedpowerup.setVelocity(0, randint(40, 60))
+    }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.setScore(info.score() + time * 10)
@@ -34,9 +58,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let time = 0
 let asteriod: Sprite = null
 let projectile: Sprite = null
+let powerupCountdown = 0
+let speedpowerup: Sprite = null
 let mySprite: Sprite = null
+let speedY = 0
+let speedX = 0
+speedX = 100
+speedY = 100
 mySprite = sprites.create(assets.image`rocket`, SpriteKind.Player)
-controller.moveSprite(mySprite)
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -159,6 +188,14 @@ scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     `)
+controller.moveSprite(mySprite, speedX, speedY)
+forever(function () {
+    if (randint(1, 1000) == 1) {
+        speedpowerup = sprites.create(assets.image`speedpowerup`, SpriteKind.Powerup)
+        speedpowerup.setPosition(randint(10, 160), 0)
+        speedpowerup.setVelocity(0, randint(40, 60))
+    }
+})
 forever(function () {
     for (let index = 0; index < 20; index++) {
         pause(2000)
