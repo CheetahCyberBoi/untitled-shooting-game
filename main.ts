@@ -19,13 +19,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Powerup, function (sprite, other
     }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    music.pewPew.playUntilDone()
     projectile = sprites.createProjectileFromSprite(assets.image`bullet`, mySprite, 0, -100)
+    music.pewPew.playUntilDone()
+    projectile.startEffect(effects.warmRadial, 500)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
+    asteriod.startEffect(effects.disintegrate, 500)
     asteriod.destroy()
     info.changeScoreBy(10)
-    music.zapped.playUntilDone()
+    music.smallCrash.playUntilDone()
 })
 controller.combos.attachCombo("upupdowndownleftrightleftrightab ", function () {
     for (let index = 0; index < 10; index++) {
@@ -34,11 +36,15 @@ controller.combos.attachCombo("upupdowndownleftrightleftrightab ", function () {
         speedpowerup.setVelocity(0, randint(40, 60))
     }
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+info.onLifeZero(function () {
     info.setScore(info.score() + time * 10)
-    effects.starField.startScreenEffect(2000)
     game.over(false)
-    effects.starField.endScreenEffect()
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    scene.cameraShake(4, 500)
+    music.bigCrash.play()
+    pause(5000)
 })
 let time = 0
 let asteriod: Sprite = null
@@ -174,6 +180,8 @@ scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     `)
 controller.moveSprite(mySprite, speedX, speedY)
+info.setLife(3)
+mySprite.setStayInScreen(true)
 forever(function () {
     if (randint(1, 1000) == 1) {
         speedpowerup = sprites.create(assets.image`speedpowerup`, SpriteKind.Powerup)

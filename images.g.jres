@@ -9,11 +9,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "myImage0"
     },
-    "image1": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQERERERAhABAV3d0d0UECEBXd3R3RQQIQERERERAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "rocket"
-    },
     "k#]oLSv/cdY1Vz#`#ZvN": {
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAiAgAAAAAAIkQiAgAAAABCVUQiAgAAAEJVRCICAAAAIkQiAgAAAAAgIgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -28,6 +23,11 @@
         "data": "hwQQABAAAAAAAIiIiIgAAACAiIiIiAgAAIiIiIiIiACAiIiIiIiICIiIiFiIiIiIiIiIVYhYhYiIiFhVWFWIiIiIVVVVhYiIiFhVVVWIiIiIVVVYhYiIiFhViFiIiIiIiIiIiIiIiIiAiIiIiIiICACIiIiIiIgAAICIiIiICAAAAIiIiIgAAA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "speedpowerup"
+    },
+    "image1": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAANANAAAAAAAAvQsAAAAAANC9CwIAAAAAvbtLAgAAAN2Zu0UCAAAA3Zm7RQIAAAAAvbtLAgAAAADQvQsCAAAAAAC9CwAAAAAAANANAAAAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "rocket"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
