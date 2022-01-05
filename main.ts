@@ -4,6 +4,7 @@ namespace SpriteKind {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Powerup, function (sprite, otherSprite) {
     if (mySprite.overlapsWith(speedpowerup)) {
         speedpowerup.destroy()
+        speedpowerup.startEffect(effects.halo)
         music.powerUp.playUntilDone()
         speedX = speedX * 1.5
         speedY = speedY * 1.5

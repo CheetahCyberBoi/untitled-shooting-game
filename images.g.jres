@@ -19,15 +19,15 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "asteriod"
     },
-    "image3": {
-        "data": "hwQQABAAAAAAAIiIiIgAAACAiIiIiAgAAIiIiIiIiACAiIiIiIiICIiIiFiIiIiIiIiIVYhYhYiIiFhVWFWIiIiIVVVVhYiIiFhVVVWIiIiIVVVYhYiIiFhViFiIiIiIiIiIiIiIiIiAiIiIiIiICACIiIiIiIgAAICIiIiICAAAAIiIiIgAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "speedpowerup"
-    },
     "image1": {
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAAAAAAANANAAAAAAAAvQsAAAAAANC9CwIAAAAAvbtLAgAAAN2Zu0UCAAAA3Zm7RQIAAAAAvbtLAgAAAADQvQsCAAAAAAC9CwAAAAAAANANAAAAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "rocket"
+    },
+    "image3": {
+        "data": "hwQQABAAAAAAAIiIiIgAAACAiIiIiAgAAIiIiIiIiACAiIiIiIiICIiIiFiIiIiIiIiIVYhYhYiIiFhVWEWIiIiIVVVVhIiIiFhVVEWIiIiIVURYhIiIiFhFiFiIiIj4iIiIiIiIiP+AiIiIiIj4DwCIiIiIiP8AAICIiIj4DwAAAP////8AAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "speedpowerup"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
