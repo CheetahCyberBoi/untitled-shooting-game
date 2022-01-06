@@ -2,9 +2,9 @@ namespace SpriteKind {
     export const Powerup = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Powerup, function (sprite, otherSprite) {
-    if (mySprite.overlapsWith(speedpowerup)) {
+    if (sprite.overlapsWith(otherSprite)) {
         speedpowerup.destroy()
-        speedpowerup.startEffect(effects.halo, 1000)
+        speedpowerup.startEffect(effects.halo, 2000)
         music.powerUp.playUntilDone()
         speedX = speedX * 1.5
         speedY = speedY * 1.5
@@ -25,8 +25,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile.startEffect(effects.warmRadial, 500)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
-    asteriod.startEffect(effects.disintegrate, 500)
-    asteriod.destroy()
+    sprite.startEffect(effects.disintegrate, 500)
+    sprite.destroy()
     info.changeScoreBy(10)
     music.smallCrash.playUntilDone()
 })
@@ -47,8 +47,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     music.bigCrash.play()
     pause(5000)
 })
-let time = 0
 let asteriod: Sprite = null
+let time = 0
 let projectile: Sprite = null
 let powerupCountdown = 0
 let speedpowerup: Sprite = null
